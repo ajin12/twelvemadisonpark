@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
+import Menu from "./Menu";
 
 const HeaderBar = styled.div`
   position: fixed;
@@ -43,6 +44,7 @@ function Header() {
 
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/menu" element={<Menu />}></Route>
         <Route exact path="/about" element={<About />}></Route>
       </Routes>
     </Router>

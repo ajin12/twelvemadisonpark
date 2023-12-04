@@ -10,10 +10,20 @@ const StyledButton = styled.button`
   cursor: pointer;
   border: 1px solid white;
   padding: 6px 12px;
+  width: fit-content;
+  align-self: center;
+  border-radius: 6px;
+
+  &:hover {
+    border-radius: 0px;
+  }
+
+  -webkit-transition: border-radius 0.5s;
+  transition: border-radius 0.5s;
 `;
 
-function Button({ text }) {
-  return <StyledButton>{text}</StyledButton>;
+function Button({ text, onClick }) {
+  return <StyledButton onClick={onClick}>{text}</StyledButton>;
 }
 
 export default Button;

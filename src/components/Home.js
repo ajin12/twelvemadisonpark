@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import logo from "../logo.svg";
+import WaitlistModal from "./WaitlistModal";
 
 const StyledContainer = styled.div`
   background-color: #282c34;
@@ -20,10 +21,18 @@ const StyledLogo = styled.img`
 `;
 
 function Home() {
+  const [showWaitlistModal, setShowWaitlistModal] = useState(false);
+
   return (
     <StyledContainer>
-      <StyledLogo src={logo} className="App-logo" alt="logo" />
-      <Button text="waitlist" />
+      {showWaitlistModal ? (
+        <WaitlistModal />
+      ) : (
+        <>
+          <StyledLogo src={logo} alt="logo" />
+          <Button text="waitlist" onClick={() => setShowWaitlistModal(true)} />
+        </>
+      )}
     </StyledContainer>
   );
 }

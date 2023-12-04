@@ -28,20 +28,30 @@ const HeaderItem = styled.div`
   cursor: pointer;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+`;
+
 function Header() {
   return (
     <Router>
       <HeaderBar>
         <HeaderContainer>
-          <Link to="/menu">
+          <StyledLink to="/menu">
             <HeaderItem>menu</HeaderItem>
-          </Link>
-          <Link to="/about">
+          </StyledLink>
+          <StyledLink to="/about">
             <HeaderItem>about</HeaderItem>
-          </Link>
-          <Link to="/reserve">
+          </StyledLink>
+          <StyledLink to="/reserve">
             <HeaderItem>reserve</HeaderItem>
-          </Link>
+          </StyledLink>
         </HeaderContainer>
       </HeaderBar>
 

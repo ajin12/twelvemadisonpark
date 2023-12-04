@@ -3,7 +3,17 @@ import styled from "styled-components";
 import Button from "./Button";
 import FormInput from "./FormInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
+const StyledContainer = styled.div`
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 100vh;
+  justify-content: center;
+`;
 
 const StyledModal = styled.div`
   position: relative;
@@ -24,12 +34,14 @@ const StyledFormContainer = styled.div`
 const StyledCloseIcon = styled(FontAwesomeIcon)`
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px;
   padding: 12px;
   cursor: pointer;
 `;
 
-function WaitlistModal({ setShowWaitlistModal }) {
+function WaitlistModal() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,38 +52,37 @@ function WaitlistModal({ setShowWaitlistModal }) {
   };
 
   return (
-    <StyledModal>
-      <StyledCloseIcon
-        icon={faXmark}
-        onClick={() => setShowWaitlistModal(false)}
-      />
-      <StyledForm onSubmit={handleSubmit}>
-        <StyledFormContainer>
-          <FormInput
-            id="name"
-            name="name"
-            label="full name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <FormInput
-            id="email"
-            name="email"
-            label="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FormInput
-            id="phone"
-            name="phone"
-            label="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <Button type="submit" text="join waitlist" />
-        </StyledFormContainer>
-      </StyledForm>
-    </StyledModal>
+    <StyledContainer>
+      <StyledModal>
+        <StyledCloseIcon icon={faArrowLeft} onClick={() => navigate(-1)} />
+        <StyledForm onSubmit={handleSubmit}>
+          <StyledFormContainer>
+            <FormInput
+              id="name"
+              name="name"
+              label="full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <FormInput
+              id="email"
+              name="email"
+              label="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FormInput
+              id="phone"
+              name="phone"
+              label="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <Button type="submit" text="join waitlist" />
+          </StyledFormContainer>
+        </StyledForm>
+      </StyledModal>
+    </StyledContainer>
   );
 }
 

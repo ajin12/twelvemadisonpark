@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import Menu from "./Menu";
+import WaitlistModal from "./WaitlistModal";
 
 const HeaderBar = styled.div`
   position: fixed;
@@ -38,7 +39,9 @@ function Header() {
           <Link to="/about">
             <HeaderItem>about</HeaderItem>
           </Link>
-          <HeaderItem>reserve</HeaderItem>
+          <Link to="/reserve">
+            <HeaderItem>reserve</HeaderItem>
+          </Link>
         </HeaderContainer>
       </HeaderBar>
 
@@ -46,6 +49,7 @@ function Header() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/menu" element={<Menu />}></Route>
         <Route exact path="/about" element={<About />}></Route>
+        <Route exact path="/reserve" element={<WaitlistModal />}></Route>
       </Routes>
     </Router>
   );

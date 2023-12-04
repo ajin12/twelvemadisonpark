@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import logo from "../logo.svg";
-import WaitlistModal from "./WaitlistModal";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   background-color: #282c34;
@@ -21,18 +21,12 @@ const StyledLogo = styled.img`
 `;
 
 function Home() {
-  const [showWaitlistModal, setShowWaitlistModal] = useState(false);
-
   return (
     <StyledContainer>
-      {showWaitlistModal ? (
-        <WaitlistModal setShowWaitlistModal={setShowWaitlistModal} />
-      ) : (
-        <>
-          <StyledLogo src={logo} alt="logo" />
-          <Button text="waitlist" onClick={() => setShowWaitlistModal(true)} />
-        </>
-      )}
+      <StyledLogo src={logo} alt="logo" />
+      <Link to="/reserve">
+        <Button text="waitlist" />
+      </Link>
     </StyledContainer>
   );
 }

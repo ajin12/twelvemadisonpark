@@ -26,7 +26,7 @@ function Home() {
   return (
     <StyledContainer>
       {showWaitlistModal ? (
-        <WaitlistModal />
+        <WaitlistModal setShowWaitlistModal={setShowWaitlistModal} />
       ) : (
         <>
           <StyledLogo src={logo} alt="logo" />

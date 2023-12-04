@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import FormInput from "./FormInput";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const StyledModal = styled.div`
+  position: relative;
   width: 540px;
   border: 1px solid white;
   border-radius: 8px;
@@ -18,7 +21,15 @@ const StyledFormContainer = styled.div`
   flex-direction: column;
 `;
 
-function WaitlistModal() {
+const StyledCloseIcon = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 12px;
+  cursor: pointer;
+`;
+
+function WaitlistModal({ setShowWaitlistModal }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -30,6 +41,10 @@ function WaitlistModal() {
 
   return (
     <StyledModal>
+      <StyledCloseIcon
+        icon={faXmark}
+        onClick={() => setShowWaitlistModal(false)}
+      />
       <StyledForm onSubmit={handleSubmit}>
         <StyledFormContainer>
           <FormInput

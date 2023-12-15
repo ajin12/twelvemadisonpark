@@ -26,15 +26,15 @@ const StyledInput = styled.input`
   }
 `;
 
-function FormInput({ id, name, value, label, onChange }) {
+function FormInput({ id, name, value, label, type = "text", onChange }) {
   return (
     <StyledFormInput>
       <StyledLabel htmlFor={name}>{label}</StyledLabel>
       <StyledInput
-        type="text"
         id={id}
         name={name}
         value={value}
+        type={type}
         onChange={onChange}
       />
     </StyledFormInput>

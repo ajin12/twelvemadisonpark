@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { addUser } from "../api";
 
 const StyledContainer = styled.div`
-  background-color: #282c34;
+  background-color: #181a32;
   display: flex;
   align-items: center;
   color: white;
@@ -71,7 +71,7 @@ function WaitlistModal() {
     if (success) {
       setShowSuccess(true);
       setMessage(
-        "You have been added to the waitlist! We'll let you know when reservations open up and look forward to seeing you soon."
+        "You've been added to the waitlist! We'll let you know when reservations open up and look forward to seeing you soon."
       );
     } else {
       setMessage("You've already joined the waitlist.");

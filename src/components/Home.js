@@ -5,7 +5,7 @@ import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
-  background-color: #282c34;
+  background-color: #181a32;
   display: flex;
   flex-direction: column;
   align-items: center;

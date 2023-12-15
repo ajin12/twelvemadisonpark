@@ -5,6 +5,7 @@ import About from "./About";
 import Home from "./Home";
 import Menu from "./Menu";
 import WaitlistModal from "./WaitlistModal";
+import logo from "../header_logo.svg";
 
 const HeaderBar = styled.div`
   position: fixed;
@@ -38,9 +39,21 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const HeaderLogo = styled.img`
+  position: fixed;
+  width: 80px;
+  padding: 24px;
+  margin-left: 40px;
+  cursor: pointer;
+  z-index: 10;
+`;
+
 function Header() {
   return (
     <Router>
+      <Link to="/">
+        <HeaderLogo src={logo} />
+      </Link>
       <HeaderBar>
         <HeaderContainer>
           <StyledLink to="/menu">

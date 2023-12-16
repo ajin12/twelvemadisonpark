@@ -13,13 +13,6 @@ const PageContainer = styled.div`
   text-align: justify;
 `;
 
-const Text = styled.div`
-  color: white;
-  font-family: "Cormorant";
-  font-size: 18px;
-  font-style: italic;
-`;
-
 const StyledMenu = styled.img`
   height: 80%;
 `;

@@ -15,6 +15,10 @@ const PageContainer = styled.div`
 
 const StyledMenu = styled.img`
   height: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 function Menu() {

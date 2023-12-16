@@ -20,6 +20,12 @@ const HeaderContainer = styled.div`
   width: 440px;
   padding: 36px 124px;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding: 28px 60px;
+    justify-content: end;
+    gap: 28px;
+  }
 `;
 
 const HeaderItem = styled.div`
@@ -27,6 +33,10 @@ const HeaderItem = styled.div`
   font-family: "Cormorant";
   font-size: 24px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -46,6 +56,11 @@ const HeaderLogo = styled.img`
   margin-left: 40px;
   cursor: pointer;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 48px;
+    margin-left: 12px;
+  }
 `;
 
 function Header() {

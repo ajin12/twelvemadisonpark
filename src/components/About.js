@@ -8,6 +8,10 @@ const PageContainer = styled.div`
   text-align: justify;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    text-align: justify;
+  }
 `;
 
 const ParagraphContainer = styled.div`
@@ -17,12 +21,20 @@ const ParagraphContainer = styled.div`
   flex-direction: column;
   max-height: 476px;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    width: 72%;
+  }
 `;
 
 const Paragraph = styled.div`
   color: white;
   font-family: "Cormorant";
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 function About() {

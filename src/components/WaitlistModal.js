@@ -21,10 +21,18 @@ const StyledModal = styled.div`
   width: 548px;
   border: 1px solid white;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 88%;
+  }
 `;
 
 const StyledForm = styled.form`
   padding: 88px;
+
+  @media (max-width: 768px) {
+    padding: 56px;
+  }
 `;
 
 const StyledFormContainer = styled.div`

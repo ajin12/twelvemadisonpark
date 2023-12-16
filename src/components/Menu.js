@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import menu from "../menu.svg";
 
 const PageContainer = styled.div`
   display: flex;
@@ -19,10 +20,14 @@ const Text = styled.div`
   font-style: italic;
 `;
 
+const StyledMenu = styled.img`
+  height: 80%;
+`;
+
 function Menu() {
   return (
     <PageContainer>
-      <Text>Coming soon!</Text>
+      <StyledMenu src={menu} />
     </PageContainer>
   );
 }
